@@ -1,0 +1,83 @@
+<!-- extend base layout -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Meeting: "{{ mInfo.meetingid.string }}"</h1>
+<table>	
+	<tr>
+		<td>Meeting ID</td>
+		<td>{{ mInfo.meetingid.string }}</td>
+	</tr>
+	<tr>
+		<td>Meeting Name</td>
+		<td>{{ mInfo.meetingname.string }}</td>
+	</tr>
+	<tr>
+		<td>Participant Count</td>
+		<td>{{ mInfo.participantcount.string }}</td>
+	</tr>
+	<tr>
+		<td>moderator count</td>
+		<td>{{ mInfo.moderatorcount.string }}</td>
+	</tr>
+	<tr>
+		<td>Create Time</td>
+		<td>{{ mInfo.createtime.string }}</td>
+	</tr>
+	<tr>
+		<td>Teilnehmer PW</td>
+		<td>{{ mInfo.attendeepw.string }}</td>
+	</tr>
+	<tr>
+		<td>Admin PW</td>
+		<td>{{ mInfo.moderatorpw.string }}</td>
+	</tr>
+	<tr>
+		<td>running?</td>
+		<td>{{ mInfo.running.string }}</td>
+	</tr>
+<!-- 	<tr>
+		<td>Voice Bridge</td>
+		<td>{{ mInfo.voicebridge.string }}</td>
+	</tr>
+	<tr>
+		<td>Dial Number</td>
+		<td>{{ mInfo.dialnumber.string }}</td>
+	</tr>
+	<tr>
+		<td>recording?</td>
+		<td>{{ mInfo.recording.string }}</td>
+	</tr>
+	<tr>
+		<td>has benn forcibly ended?</td>
+		<td>{{ mInfo.hasbeenforciblyended.string }}</td>
+	</tr>
+	<tr>
+		<td>start Time</td>
+		<td>{{ mInfo.starttime.string }}</td>
+	</tr>
+	<tr>
+		<td>end Time</td>
+		<td>{{ mInfo.endtime.string }}</td>
+	</tr>
+	<tr>
+		<td>Max Users</td>
+		<td>{{ mInfo.maxusers.string }}</td>
+	</tr>
+	<tr>
+		<td>attendees</td>
+		<td>{{ mInfo.attendees.string }}</td>
+	</tr> -->
+	</tr>
+		<td>Als Teilnehmer beitreten</td>
+		<td>Als Moderator beitreten</td>
+		<td>beenden</td>
+	</tr>
+</table>
+
+
+{% endblock %}
+
+
+

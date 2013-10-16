@@ -1,0 +1,28 @@
+<html>
+	<head>
+		{% if title %}
+		<title>BBB {{title}}</title>
+		{% else %}
+		<title>BBB Admin</title>
+		{% endif %}
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+		{% for message in messages %}
+			<li>{{message}}</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+		<div>
+		<img src="/static/TNGlogo.png" alt='TNG Logo' width='100'>
+			BBB-Admin: 
+			<a href="{{ url_for('index') }}">Home</a>
+			<a href="{{ url_for('new') }}">Create new Meeting</a>
+		</div>
+		<hr>
+		{% block content %}{% endblock %}
+	</body>
+</html>

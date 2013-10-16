@@ -1,0 +1,333 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"moder",
+				"moderatorPW"
+			],
+			[
+				"getMe",
+				"getMeetingInfo"
+			],
+			[
+				"end",
+				"endCall"
+			],
+			[
+				"is",
+				"isMeetingRunningCall"
+			],
+			[
+				"mod",
+				"moderatorPW"
+			],
+			[
+				"join",
+				"joinMeeting"
+			],
+			[
+				"atte",
+				"attendeePW"
+			],
+			[
+				"check",
+				"checksum"
+			],
+			[
+				"create",
+				"createTime"
+			],
+			[
+				"cre",
+				"createMeetingsCall"
+			],
+			[
+				"mee",
+				"meetingID"
+			],
+			[
+				"createM",
+				"createMeetingsCall"
+			],
+			[
+				"get",
+				"getMeetingsHash"
+			],
+			[
+				"pars",
+				"parsedList"
+			],
+			[
+				"parsed",
+				"parsedListFile"
+			],
+			[
+				"updat",
+				"updateParsedList"
+			],
+			[
+				"Par",
+				"ParsedList"
+			],
+			[
+				"Pars",
+				"ParsedListFile"
+			],
+			[
+				"Parse",
+				"ParsedListFile"
+			],
+			[
+				"Log",
+				"LogArchiveList"
+			],
+			[
+				"ParsedList",
+				"ParsedListText"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "run.py",
+			"settings":
+			{
+				"buffer_size": 59,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/leonardwein/Git/bbbAdmin/app/templates/new.html",
+		"/Users/leonardwein/Git/bbbAdmin/config.py",
+		"/Users/leonardwein/Git/bbbAdmin/db_downgrade.py",
+		"/Users/leonardwein/Git/bbbAdmin/db_migrate.py",
+		"/Users/leonardwein/Git/bbbAdmin/db_upgrade.py",
+		"/Users/leonardwein/Git/bbbAdmin/run.py",
+		"/Users/leonardwein/Git/bbbAdmin/virtualenv.py",
+		"/Users/leonardwein/Git/bbbAdmin/db_create.py",
+		"/Users/leonardwein/Git/bbbAdmin/app.db",
+		"/Volumes/TNG/LogAnalysis/LogAnalysisSummary",
+		"/Users/leonardwein/Desktop/generateAPIcalls.py",
+		"/Users/leonardwein/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/leonardwein/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/leonardwein/Desktop/A03841A4.asc",
+		"/Volumes/TNG/Reveal/css/theme/default.css",
+		"/Users/leonardwein/Desktop/toEUR.py",
+		"/Volumes/TNG/Reveal/css/print/pdf.css",
+		"/Volumes/TNG/Reveal/css/print/paper.css",
+		"/Volumes/TNG/Reveal/css/reveal.min.css",
+		"/Volumes/TNG/Reveal/js/reveal.min.js",
+		"/Volumes/TNG/Reveal/js/ppit.js",
+		"/Volumes/TNG/Reveal/plugin/highlight/highlight.js",
+		"/Volumes/TNG/LogAnalysis/LogAnalysis.py",
+		"/Users/leonardwein/Desktop/regex test 2",
+		"/Users/leonardwein/Desktop/regex test",
+		"/System/Library/Filters/Reduce File Size - new.qfilter",
+		"/Volumes/NO NAME/Log Analysis/LogFiles/access.log.1",
+		"/Users/leonardwein/Desktop/TNG/Plone/zinstance/bin/plonectl",
+		"/Users/leonardwein/Desktop/pyrocms-pyrocms-08759da/README.md",
+		"/Users/leonardwein/Dropbox/install-ffmpeg.sh",
+		"/Users/leonardwein/Desktop/SQLHardWay/test.db",
+		"/Users/leonardwein/Desktop/SQLHardWay/ex1.db",
+		"/Users/leonardwein/Desktop/SQLHardWay/ex3.db",
+		"/Users/leonardwein/Desktop/tng.tblk/tng.conf",
+		"/Users/leonardwein/Desktop/Sample Tunnelblick VPN Configuration/tng.conf",
+		"/Users/leonardwein/Desktop/Sample Tunnelblick VPN Configuration/config.ovpn",
+		"/Users/leonardwein/Desktop/weinl.key",
+		"/Users/leonardwein/Desktop/weinl.crt",
+		"/Users/leonardwein/Desktop/ca.crt",
+		"/Users/leonardwein/ex2.sql",
+		"/Users/leonardwein/.gnupg/setenv.sh",
+		"/Users/leonardwein/.gnupg/keysync.sh",
+		"/Users/leonardwein/Desktop/TNG/78838005.asc",
+		"/Users/leonardwein/temp/ex13.txt",
+		"/Users/leonardwein/temp/ex.12txt",
+		"/Users/leonardwein/Desktop/ex12.txt",
+		"/Users/leonardwein/Dropbox/AUC/MRWP/Mathematica Tutorial/LearningTut1.nb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"join",
+			"installationdata",
+			"important",
+			"sun",
+			"13.6",
+			"date",
+			"22.09",
+			"compre",
+			"Could not ",
+			"Could not download optional AllKeyserverKeys.tar.gz. Therefore keyserver access required",
+			"HTTPUSER",
+			"fried"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "run.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"project": "bbbAdminApp.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
