@@ -3,15 +3,29 @@
 
 {% block content %}
 
+<script type='text/javascript'>
+function set_joinLink(joinURL)
+{
+	fullName = prompt('Enter your display name:')
+	document.location = joinURL+'/'+fullName
+}
+</script>
+
+
 <h1>Meeting: "{{ mInfo.meetingid.string }}"</h1>
+<div>
+<table>
+	</tr>
+		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');">Join as Attendee</a></td>
+		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');">Join as Moderator</a></td>
+		<td><a href="{{ url_for('closeMeeting', meetingid=mInfo.meetingid.string, moderatorpw=mInfo.moderatorpw.string) }}">Shutdown Meeting</a></td>
+	</tr>
+</table>
+<br>
 <table>	
 	<tr>
-		<td>Meeting ID</td>
-		<td>{{ mInfo.meetingid.string }}</td>
-	</tr>
-	<tr>
-		<td>Meeting Name</td>
-		<td>{{ mInfo.meetingname.string }}</td>
+		<td>running?</td>
+		<td>{{ mInfo.running.string }}</td>
 	</tr>
 	<tr>
 		<td>Participant Count</td>
@@ -21,23 +35,72 @@
 		<td>moderator count</td>
 		<td>{{ mInfo.moderatorcount.string }}</td>
 	</tr>
+
+	{% if mInfo.createtime.string %}
 	<tr>
 		<td>Create Time</td>
-		<td>{{ mInfo.createtime.string }}</td>
+		<td>
+			<script>document.write(moment("/Date({{mInfo.createtime.string}}"));</script>
+		</td>
+	</tr>
+	{% endif %}
+	<tr>
+		<td>Admin PW</td>
+		<td>{{ mInfo.moderatorpw.string }}</td>
+	</tr>
+</table>
+</div>
+</br></br>
+<div>
+
+
+<form action='' method='post' name='newparticipant'>
+	{{form.hidden_tag()}}
+	<p>
+		Username: {{form.username(size=40)}}
+		{% for error in form.errors.username %}
+		<span style="color: red;">[{{error}}]</span>
+		{% endfor %}<br>
+	</p>
+	<p>
+		<input type='submit' value='Submit'>
+	</p>
+</form>
+<br>
+<br>
+<table>
+	{% if joinUsers[mInfo.meetingid.string] %}
+	{% for key, value in joinUsers[mInfo.meetingid.string].iteritems() %}
+	<tr>
+		<td>
+			{{ key }}
+		</td>
+		<td>
+			{{ value }}
+		</td>
+	</tr>
+	{% endfor %}
+	{% endif %}
+</table>
+
+
+
+{% endblock %}
+
+
+	<!-- <tr>
+		<td>Meeting ID</td>
+		<td>{{ mInfo.meetingid.string }}</td>
+	</tr>
+	<tr>
+		<td>Meeting Name</td>
+		<td>{{ mInfo.meetingname.string }}</td>
 	</tr>
 	<tr>
 		<td>Teilnehmer PW</td>
 		<td>{{ mInfo.attendeepw.string }}</td>
 	</tr>
 	<tr>
-		<td>Admin PW</td>
-		<td>{{ mInfo.moderatorpw.string }}</td>
-	</tr>
-	<tr>
-		<td>running?</td>
-		<td>{{ mInfo.running.string }}</td>
-	</tr>
-<!-- 	<tr>
 		<td>Voice Bridge</td>
 		<td>{{ mInfo.voicebridge.string }}</td>
 	</tr>
@@ -69,15 +132,5 @@
 		<td>attendees</td>
 		<td>{{ mInfo.attendees.string }}</td>
 	</tr> -->
-	</tr>
-		<td>Als Teilnehmer beitreten</td>
-		<td>Als Moderator beitreten</td>
-		<td>beenden</td>
-	</tr>
-</table>
-
-
-{% endblock %}
-
 
 

@@ -12,15 +12,14 @@ function set_joinLink(joinURL)
 </script>
 
 <h1>BBB Dashboard</h1>
-<h2><a href='{{ url_for('index') }}'>Update Server Status</a></h2>
+<!-- <h2><a href='{{ url_for('index') }}'>Update Server Status</a></h2> -->
 <table>	
 	<tr>
-		<td>ID</td>
-		<td>Name</td>
+		<td>Meeting Name</td>
 		<td># Teilnehmer</td>
-		<td>CreateTime</td>
-		<td>Teilnehmer PW</td>
-		<td>Admin PW</td>
+		<td>Create Time</td>
+		<!-- <td>Teilnehmer PW</td>
+		<td>Admin PW</td> -->
 		<td>running?</td>
 		<td>Als Teilnehmer beitreten</td>
 		<td>Als Moderator beitreten</td>
@@ -30,11 +29,12 @@ function set_joinLink(joinURL)
 	{% for m in meetings %}
 	<tr>
 		<td><a href="{{ url_for('meeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">{{ m.meetingid.string }}</a></td>
-		<td>{{m.meetingname.string}}</td>
 		<td></td>
-		<td>{{m.createtime.string}}</td>
-		<td>{{m.attendeepw.string}}</td>
-		<td>{{m.moderatorpw.string}}</td>
+		<td>
+			<script>document.write(moment("/Date({{m.createtime.string}}"));</script>
+		</td>
+		<!-- <td>{{m.attendeepw.string}}</td>
+		<td>{{m.moderatorpw.string}}</td> -->
 		<td>{{m.running.string}}</td>
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.attendeepw.string, createtime=m.createtime.string) }}');">Join as Attendee</a></td>
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.moderatorpw.string, createtime=m.createtime.string) }}');">Join as Moderator</a></td>

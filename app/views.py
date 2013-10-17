@@ -1,6 +1,6 @@
-from  flask import render_template, flash, redirect, session, url_for, request, g
+from  flask import render_template, flash, redirect, session, url_for, request, g, make_response
 from app import app
-from forms import EditForm
+from forms import createMeetingForm, joinMeetingForm
 from datetime import datetime
 import hashlib, requests
 from bs4 import BeautifulSoup as Soup
@@ -15,6 +15,7 @@ moderatorPW = 'mp'
 fullName = 'User'
 welcome = ''
 maxParticipants = ''
+joinUsers = {}
 # record = False
 
 
@@ -41,17 +42,25 @@ def createMeetingCall(meetingName,meetingID,moderatorPW,attendeePW,record):
 	apiCall = '{0}create?name={1}&meetingID={2}&moderatorPW={3}&attendeePW={4}&record={5}&checksum={6}'.format(server,meetingName,meetingID,moderatorPW,attendeePW,record,checksum)
 	return Soup(requests.get(apiCall).content)
 
+def updateJoinUsers(meetings):
+	mIDlist = []
+	for m in meetings:
+		mIDlist.append(m.meetingid.string)
+	for mID in joinUsers.keys():
+		if mID not in mIDlist:				
+			del joinUsers[mID]
 
 
 # Root handler
 @app.route('/')
 @app.route('/index')
 def index():
-	createMessage = session['createMessage']
+	# createMessage = session['createMessage']
 	meetings = getMeetingsCall().find_all('meeting')
+	updateJoinUsers(meetings)
 	return render_template("index.html", 
 		title = 'Admin',
-		createMessage = createMessage,
+		# createMessage = createMessage,
 		meetings = meetings)
 
 
@@ -59,15 +68,16 @@ def index():
 # handler to generate new meetings functionality
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
-	form = EditForm()
+	form = createMeetingForm()
 	if form.validate_on_submit():
 		record = False
-		createMeetingStatus = createMeetingCall(form.meetingName.data, form.meetingID.data, form.moderatorPW.data, form.attendeePW.data, record)
+		createMeetingStatus = createMeetingCall(form.meetingName.data, form.meetingName.data, form.moderatorPW.data, form.attendeePW.data, record)
 		flash(createMeetingStatus.returncode.string)
+		joinUsers[str(form.meetingName.data)]={}
 		return redirect(url_for('index'))
 	return render_template("new.html", 
 		title = 'New Meeting',
-		secret = secret,
+		# secret = secret,
 		form = form)
 
 
@@ -96,14 +106,21 @@ def closeMeeting(meetingid,moderatorpw):
 	return redirect(url_for('index'))
 
 
-
 # Detail view of a meeting
-@app.route('/meeting/<meetingid>')
-@app.route('/meeting/<meetingid>/<moderatorpw>')
+@app.route('/meeting/<meetingid>', methods=['GET', 'POST'])
+@app.route('/meeting/<meetingid>/<moderatorpw>', methods=['GET', 'POST'])
 def meeting(meetingid,moderatorpw):
+	form = joinMeetingForm()
 	mInfo = getMeetingInfoCall(meetingid,moderatorpw)
+	if form.validate_on_submit():
+		joinURL = joinMeetingCall(mInfo.meetingid.string,mInfo.attendeepw.string,form.username.data,mInfo.createtime.string)
+		flash('Success! URL created: '+joinURL)
+		joinUsers[mInfo.meetingid.string][form.username.data]=joinURL
+		return redirect(url_for('meeting', meetingid=mInfo.meetingid.string,moderatorpw=mInfo.moderatorpw.string))
 	return render_template('meeting.html',
-		mInfo = mInfo)
+		mInfo = mInfo,
+		form = form,
+		joinUsers = joinUsers)
 
 
 
