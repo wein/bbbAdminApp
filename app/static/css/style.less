@@ -1,0 +1,112 @@
+// Style for the BBB Admin App
+
+html {
+// padding: 1em;
+// font-weight: 300;
+}
+
+body {
+	font-family: arial;
+ 	max-width:1600px;
+	min-width:520px;
+	margin:1.5em;
+}
+
+h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+// block to format header bar
+
+#header {
+	width: 100%;  
+    // display: inline;
+    // float: left;
+    // text-align: center;
+	// padding: 3px 10px;
+	// font-size: 50px;
+	// white-space:nowrap;
+}
+
+#logoHeader {
+	max-width: 150px;
+	width: 20vw;
+	position: relative;
+	margin-right: 0px;
+}
+
+// #bbbHeader {
+// 	max-width: 150px;
+// 	width: 20%;
+// 	// position: relative;	
+// 	margin-right: 0px;
+// }
+
+#titleHeader {
+	color: black;
+	background-color:transparent;
+  	text-decoration:none;
+  	margin: 0px 4vw;
+  	font-size: 3vw;
+  	position: relative;
+  	text-align: center;
+}
+
+
+// --- block to format tables
+
+#joinAttendee {
+	table-layout:fixed;
+	word-wrap:break-word
+}
+
+table {
+	border-width: 0px;
+	border-collapse:collapse;
+	font-size: 1vw;
+	width: 100%;
+	text-align: left;
+	-moz-box-shadow: 2px 2px 2px #CCC;
+	-webkit-box-shadow: 2px 2px 2px #CCC;
+	box-shadow: 2px 2px 2px #CCC;
+}
+
+table#Overview tr:not(:first-child):hover {
+	background-color: #E6E6FA;
+}
+
+// table a {
+// 	display:block;
+//     text-decoration:none;
+// }
+
+table.nav {
+	text-align: center;
+}
+
+tr, td, th
+{
+padding: 5px 10px;
+border: 1px solid #005faa;
+}
+
+a:link:not(#headerTitle) {
+  color: #005faa;
+  background-color:transparent;
+  text-decoration:none;
+}
+a:visited:not(#headerTitle) {
+  color: #005faa;
+  background-color: transparent;
+  text-decoration:none;
+}
+a:hover:not(#headerTitle), a:focus:not(#headerTitle) {
+  color: #FF7700;
+  background-color: transparent;
+  text-decoration:none;
+}
+a:active:not(#headerTitle) {
+  color: #FF7700;
+  background-color: transparent;
+  text-decoration:none;
+}

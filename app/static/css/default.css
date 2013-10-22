@@ -1,0 +1,358 @@
+@charset "utf-8";
+/**
+* TravelFlock Stylesheet
+* Authors: Leonard Wein &amp; Konstantin Hierl
+* @link http://localhost
+* @version 0.6
+*/
+
+/**
+* Global settings and Bugfixes
+*
+* @section Browser-Reset
+*/
+ 
+/* Reset of inner and outer margins */
+* {
+  margin: 0;
+  padding: 0;
+}
+/** 
+* font size control
+*/
+body, td, th { 
+	font: normal 85%/167% Arial, Calibri; 
+} 
+td, th { 
+	font-size: 100%; 
+}
+
+/* set colors and backgrounds */
+html, body {
+	color: #3b2b20;
+	height: 100%;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/**
+* rules for general elements
+*
+* Background formatting
+*/
+body {
+	background-color: #FFFFFF; 
+	background-image:url('images/background_pattern.png');
+}
+
+/**
+* @section headlines
+*/
+h1 {
+  color: #000000;
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+h1 a:hover,
+h1 a:focus,
+h1 a:active {
+  background-color: transparent;
+}
+h2 {
+  color: #45a2c7;
+  font-size: 1.5em;
+  line-height: 1.1;
+  margin: .8em 0;
+  text-transform: uppercase;
+} 
+/**
+* @section paragraphs
+*/
+p { margin: .8em 0; }
+
+/**
+* @section Links and anchors
+*/
+a:link {
+  color: #0091BE;
+  background-color:transparent;
+}
+a:visited {
+  color: #0091BE;
+  background-color: transparent;
+}
+a:hover, a:focus {
+  color: #FF7700;
+  background-color: transparent;
+}
+a:active {
+  color: white;
+  background-color: #0091BE;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/**
+* Rules for special areas
+*
+* @section container
+*/
+div#container {
+	min-height: 100%;
+	position: relative;	
+	margin-bottom: -4.5em;
+}
+
+/**
+* @section header
+*/
+div#header {
+	width: auto;
+/*  margin: auto; */
+	position: relative;
+/*	padding: 10px;
+	padding-left: 0;
+	padding-top: 0;*/
+}
+ 
+#header h1 {
+  margin: 0;
+  padding: 0;
+  width: 288px;
+}
+/**
+* @section main menu
+*/
+#header ul {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+}
+#header ul li {
+  float: left;
+  list-style: none;
+  margin: 0 30px 0 0;
+}
+
+#header ul a,
+#header ul strong {
+  color: #302217;
+  background:#82827E bottom left;
+  display: block;
+  padding: .8em;
+/*  text-transform: uppercase; */
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  -moz-box-shadow: 3px 3px 3px #CCCCCC;
+  -webkit-box-shadow: 3px 3px 3px #CCCCCC;
+  box-shadow: 3px 3px 3px #CCCCCC;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+#header ul a:hover,
+#header ul a:focus,
+#header ul a:active,
+#header ul strong {
+  color: white;
+  background: #0091BE;
+}
+
+
+/**
+* @section body
+*/
+div#body {
+  color: inherit;
+  background: #ffffff top center no-repeat;
+  width: 80%;
+  max-width: 900px;
+  margin: 3.0em auto;
+  margin-bottom: 100px;
+  padding: 2em 2em 2em 2em;
+
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: thin solid #C0C0C0;
+  box-shadow: 4px 4px 3px #CCCCCC;
+}
+
+/**
+* @section Search_bar
+*/
+form {
+	margin-top: 2em;
+}
+
+.input {
+	width: 200px;
+	background-color: #e8edff;
+	border: 1px solid grey;
+	height: 3em;
+	margin-right: 1em;
+}
+.input:hover {
+	border: 1px solid orange;
+}
+.input:focus {
+	border: 2px solid orange;
+	outline: none;
+}
+
+/**
+* @section Search_Results
+*/
+#search_results table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 1em;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	-moz-box-shadow: 3px 3px 3px #CCCCCC;
+	-webkit-box-shadow: 3px 3px 3px #CCCCCC;
+	box-shadow: 3px 3px 3px #CCCCCC;
+}
+#search_results th {
+	font-size: 13px;
+	font-weight: bold;
+	padding: 8px;
+	background: #0091BE;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	opacity: 1;
+}
+#search_results th a {
+	color: #fff;
+}
+#search_results th a:hover {
+	color: #fff;
+}
+#search_results td {
+	padding: 8px;
+	background: #e8edff; 
+	border-bottom: 1px solid #fff;
+	color: #747170;
+	border-top: 1px solid transparent;
+}
+#search_results tfoot td {
+	font-size: 0.5em;
+	padding: 3px;
+	border-bottom: 0 solid #fff;
+}
+#search_results tr:hover td {
+	background: #d0dafd;
+	color: #566D7E;
+}
+#search_results tfoot tr:hover td {
+	background: #e8edff;
+}
+
+#search_results table tr td a {
+    display:block;
+    height:100%;
+    width:100%;
+    text-decoration:none;
+}
+#search_results a:hover {
+	color:#0091BE;   
+}
+
+/**
+* @section MoreInfo Rating
+*/
+#rating {
+	color: #302217;
+	font-size: 4em;
+	background:#FF7700 bottom left; /* #82827E */
+	display: block;
+	padding: 1em 0em;
+	margin: 0 1em 0.5em 1em;
+	/*  text-transform: uppercase; */
+	text-align: center;
+	font-weight: bold;
+	-moz-box-shadow: 3px 3px 3px #CCCCCC;
+	-webkit-box-shadow: 3px 3px 3px #CCCCCC;
+	box-shadow: 3px 3px 3px #CCCCCC;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+#rate_now {
+	text-align: center;
+	text-decoration: none;
+	font-size:1.2em;
+
+}
+
+#morePhoto {
+	width:300px;
+	text-align:center;
+}
+
+#table_moreInfo {
+	width:100%;
+}
+
+
+
+/**
+* @page Add Destination
+*/
+label {
+	width: 10em;
+	float: left;
+	text-align: left;
+	margin-right: 0.5em;
+	display: block
+}
+.submit input {
+	margin-left: 13em;
+}
+
+
+/**
+* @page About
+*/
+table#about td {
+	width: 50%;
+	padding: 1em;
+	padding-right: 50px;
+	text-align: justify;
+}
+
+/**
+* @section footer
+*/
+div#footer {
+	color: #ffffff;
+	background: #0091BE;
+	padding: 0.1em 0 0 5%;
+	bottom: 0;
+	width: 100%;
+	height: 4.5em;
+	position: relative;
+}
+.clearfooter {
+	height: 1em;
+	clear: both;
+}
+div#footer a:visited,
+div#footer a:link {
+	color: #ffffff;
+}
+div#footer a:hover {
+	color: #FF7700;
+	background-color: transparent;
+}
+div#footer a:focus,
+div#footer a:active {
+  color: #34282C;
+  background:#82827E;
+}
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+

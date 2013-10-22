@@ -1,11 +1,12 @@
 from  flask import render_template, flash, redirect, session, url_for, request, g, make_response
 from app import app
 from forms import createMeetingForm, joinMeetingForm
+# from flask.ext.ldap import LDAP, login_required
 from datetime import datetime
 import hashlib, requests
 from bs4 import BeautifulSoup as Soup
 
-server = 'http://bigbluebutton.int.tngtech.com/bigbluebutton/api/'
+server = 'http://conference.tngtech.com/bigbluebutton/api/'
 secret = 'b453bf804155f4b33d973c9ba25079a7'
 
 # --------  Parameters  --------
@@ -17,6 +18,19 @@ welcome = ''
 maxParticipants = ''
 joinUsers = {}
 # record = False
+
+# # Login Config
+# app.config['LDAP_HOST'] = 'ldap.int.tngtech.com'
+# app.config['LDAP_PORT'] = '636'
+# app.config['LDAP_DOMAIN'] = 'tngtech.com'
+# app.config['LDAP_SEARCH_BASE'] = 'OU=Users,DC=tngtech.com,DC=com'
+# app.config['LDAP_LOGIN_VIEW'] = 'login'
+# app.config['LDAP_LOGIN_TEMPLATE'] = 'login.html'
+# app.config['LDAP_SUCCESS_REDIRECT'] = 'index'
+
+# ldap = LDAP(app)
+# app.secret_key = "hellos"
+# app.add_url_rule('/login', 'login', ldap.login, methods=['GET', 'POST'])
 
 
 # Creates the checksum of an input string
@@ -49,19 +63,34 @@ def updateJoinUsers(meetings):
 	for mID in joinUsers.keys():
 		if mID not in mIDlist:				
 			del joinUsers[mID]
+	print joinUsers
 
+
+def getParticipants(meetings):
+	participantsDict = {}
+	for m in meetings:
+		mID = m.meetingid.string
+		print mID
+		print m.moderatorpw.string
+		participantsDict[mID]=getMeetingInfoCall(mID,m.moderatorpw.string).participantcount.string
+	return participantsDict
 
 # Root handler
 @app.route('/')
 @app.route('/index')
+# @login_required
 def index():
-	# createMessage = session['createMessage']
 	meetings = getMeetingsCall().find_all('meeting')
+	participants = getParticipants(meetings)
 	updateJoinUsers(meetings)
 	return render_template("index.html", 
 		title = 'Admin',
-		# createMessage = createMessage,
-		meetings = meetings)
+		meetings = meetings,
+		participants = participants)
+
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     render_template("index.html")
 
 
 
@@ -112,9 +141,12 @@ def closeMeeting(meetingid,moderatorpw):
 def meeting(meetingid,moderatorpw):
 	form = joinMeetingForm()
 	mInfo = getMeetingInfoCall(meetingid,moderatorpw)
+	if mInfo.messagekey.string == 'notFound':
+		flash('Meeting has expired.')
+		return redirect(url_for('index'))
 	if form.validate_on_submit():
 		joinURL = joinMeetingCall(mInfo.meetingid.string,mInfo.attendeepw.string,form.username.data,mInfo.createtime.string)
-		flash('Success! URL created: '+joinURL)
+		# flash('Success! URL created: '+joinURL)
 		joinUsers[mInfo.meetingid.string][form.username.data]=joinURL
 		return redirect(url_for('meeting', meetingid=mInfo.meetingid.string,moderatorpw=mInfo.moderatorpw.string))
 	return render_template('meeting.html',

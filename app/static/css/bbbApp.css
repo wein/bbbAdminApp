@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+h1 {
+  color: #0000;
+  font-size: 2.5em;
+  line-height: 1.5;
+}
+
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 1em;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	-moz-box-shadow: 3px 3px 3px #CCCCCC;
+	-webkit-box-shadow: 3px 3px 3px #CCCCCC;
+	box-shadow: 3px 3px 3px #CCCCCC;
+}
+
+.border {
+  padding: 80px;
+  margin: 80px;
+  border-color: #3bbfce;
+}

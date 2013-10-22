@@ -4,32 +4,46 @@
 {% block content %}
 
 <script type='text/javascript'>
+// Function to prompt user for username in order to join a meeting.
 function set_joinLink(joinURL)
 {
 	fullName = prompt('Enter your display name:')
 	document.location = joinURL+'/'+fullName
 }
-</script>
 
-<h1>BBB Dashboard</h1>
-<!-- <h2><a href='{{ url_for('index') }}'>Update Server Status</a></h2> -->
-<table>	
-	<tr>
-		<td>Meeting Name</td>
-		<td># Teilnehmer</td>
-		<td>Create Time</td>
-		<!-- <td>Teilnehmer PW</td>
-		<td>Admin PW</td> -->
-		<td>running?</td>
-		<td>Als Teilnehmer beitreten</td>
-		<td>Als Moderator beitreten</td>
-		<td>beenden</td>
+// Function to make the entire row clickable.
+$(document).ready(function() {
+
+    $('tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+
+});
+
+</script>
+<br>
+<a href="{{ url_for('new') }}">Create new Meeting</a>
+<br><br>
+<table id='Overview'>	
+	<tr class='clickableRow' href='http://www.google.com'>
+		<th>Meeting Name</th>
+		<th># Teilnehmer</th>
+		<th>Create Time</th>
+		<!-- <th>Teilnehmer PW</th>
+		<th>Admin PW</th> -->
+		<th>running?</th>
+		<th>Als Teilnehmer beitreten</th>
+		<th>Als Moderator beitreten</th>
+		<th>beenden</th>
 	</tr>
 	{% if meetings != [] %}
 	{% for m in meetings %}
 	<tr>
 		<td><a href="{{ url_for('meeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">{{ m.meetingid.string }}</a></td>
-		<td></td>
+		<td>{{ participants[m.meetingid.string] }}</td>
 		<td>
 			<script>document.write(moment("/Date({{m.createtime.string}}"));</script>
 		</td>
@@ -41,8 +55,20 @@ function set_joinLink(joinURL)
 		<td><a href="{{ url_for('closeMeeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">Shutdown Meeting</a></td>
 	</tr>
 	{% endfor %}
+	{% else %}
+	<tr>
+		<td>&nbsp;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
 	{% endif %}
 </table>
+
+
 
 {% endblock %}
 

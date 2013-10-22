@@ -9,12 +9,26 @@ function set_joinLink(joinURL)
 	fullName = prompt('Enter your display name:')
 	document.location = joinURL+'/'+fullName
 }
+
+function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflow.com)
+            if (document.selection) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(obj);
+                range.select();
+            }
+            else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(obj);
+                window.getSelection().addRange(range);
+            }
+        }
+
 </script>
 
 
 <h1>Meeting: "{{ mInfo.meetingid.string }}"</h1>
 <div>
-<table>
+<table class='nav'>
 	</tr>
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');">Join as Attendee</a></td>
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');">Join as Moderator</a></td>
@@ -68,14 +82,14 @@ function set_joinLink(joinURL)
 </form>
 <br>
 <br>
-<table>
+<table id='joinAttendee'>
 	{% if joinUsers[mInfo.meetingid.string] %}
 	{% for key, value in joinUsers[mInfo.meetingid.string].iteritems() %}
 	<tr>
 		<td>
 			{{ key }}
 		</td>
-		<td>
+		<td onclick="selectText(this)">
 			{{ value }}
 		</td>
 	</tr>
