@@ -25,19 +25,19 @@ $(document).ready(function() {
 
 </script>
 <br>
-<a href="{{ url_for('new') }}">Create new Meeting</a>
+<a href="{{ url_for('new') }}" class='button'>Create new Meeting</a>
 <br><br>
 <table id='Overview'>	
 	<tr class='clickableRow' href='http://www.google.com'>
 		<th>Meeting Name</th>
-		<th># Teilnehmer</th>
-		<th>Create Time</th>
+		<th>Participants</th>
+		<th>Time Created</th>
 		<!-- <th>Teilnehmer PW</th>
 		<th>Admin PW</th> -->
-		<th>running?</th>
-		<th>Als Teilnehmer beitreten</th>
-		<th>Als Moderator beitreten</th>
-		<th>beenden</th>
+		<!-- <th>running?</th> -->
+		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 	{% if meetings != [] %}
 	{% for m in meetings %}
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		</td>
 		<!-- <td>{{m.attendeepw.string}}</td>
 		<td>{{m.moderatorpw.string}}</td> -->
-		<td>{{m.running.string}}</td>
+		<!-- <td>{{m.running.string}}</td> -->
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.attendeepw.string, createtime=m.createtime.string) }}');">Join as Attendee</a></td>
 		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.moderatorpw.string, createtime=m.createtime.string) }}');">Join as Moderator</a></td>
 		<td><a href="{{ url_for('closeMeeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">Shutdown Meeting</a></td>
@@ -61,9 +61,9 @@ $(document).ready(function() {
 		<td></td>
 		<td></td>
 		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td width="100px"></td>
+		<td width="100px"></td>
+		<td width="100px"></td>
 	</tr>
 	{% endif %}
 </table>

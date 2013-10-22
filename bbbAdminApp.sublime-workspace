@@ -4,8 +4,92 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding"
+			],
+			[
+				"header",
+				"headerTitle"
+			],
+			[
+				"title",
+				"titleHeader"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"login",
+				"login_required"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"partic",
+				"participantsDict"
+			],
+			[
+				"joinU",
+				"joinUsers_exists"
+			],
+			[
+				"joinMee",
+				"joinMeetingForm"
+			],
+			[
+				"getMeetingI",
+				"getMeetingInfoCall"
+			],
+			[
+				"return",
+				"returncode"
+			],
+			[
+				"api",
+				"apiCall"
+			],
+			[
+				"meeti",
+				"meetingid"
+			],
+			[
+				"message",
+				"messageBody"
+			],
+			[
+				"close",
+				"closeMeetingCall"
+			],
+			[
 				"moder",
-				"moderatorPW"
+				"moderatorpw"
+			],
+			[
+				"meetings",
+				"meetingsList"
+			],
+			[
+				"mess",
+				"message"
+			],
+			[
+				"messa",
+				"messagekey"
+			],
+			[
+				"has",
+				"hasBeenForciblyEnded"
+			],
+			[
+				"mes",
+				"messageBody"
+			],
+			[
+				"me",
+				"message"
 			],
 			[
 				"getMe",
@@ -92,10 +176,66 @@
 	"buffers":
 	[
 		{
-			"file": "run.py",
+			"file": "app/templates/index.html",
 			"settings":
 			{
-				"buffer_size": 59,
+				"buffer_size": 2083,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/meeting.html",
+			"settings":
+			{
+				"buffer_size": 3502,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/login.html",
+			"settings":
+			{
+				"buffer_size": 96,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views.py",
+			"settings":
+			{
+				"buffer_size": 5688,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/forms.py",
+			"settings":
+			{
+				"buffer_size": 778,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 1382,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/static/css/style.less",
+			"settings":
+			{
+				"buffer_size": 2614,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/static/css/default.css",
+			"settings":
+			{
+				"buffer_size": 5624,
 				"line_ending": "Unix"
 			}
 		}
@@ -103,17 +243,23 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 207.0,
 		"selected_items":
 		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 449.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'"
 		]
 	},
 	"distraction_free":
@@ -127,6 +273,29 @@
 	},
 	"file_history":
 	[
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/css/style.less",
+		"/Users/leonardwein/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/leonardwein/Git/bbbAdminApp/app/views.py",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/not-zip-safe",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/PKG-INFO",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/dependency_links.txt",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/requires.txt",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/SOURCES.txt",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/Flask_LDAP.egg-info/top_level.txt",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/PKG-INFO",
+		"/Users/leonardwein/Git/bbbAdminApp/Flask-LDAP-0.1.4/setup.py",
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/css/bbbApp.css",
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/css/bootstrap-responsive.min.css",
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/css/bootstrap.min.css",
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/css/default.css",
+		"/Users/leonardwein/Git/bbbAdminApp/app/static/bbbApp.css",
+		"/Users/leonardwein/Git/bbbAdminApp/app/templates/meeting.html",
+		"/Users/leonardwein/Git/bbbAdminApp/app/templates/new.html",
+		"/Users/leonardwein/Git/bbbAdminApp/app/forms.py",
+		"/Users/leonardwein/Git/bbbAdminApp/app/__init__.py",
+		"/Users/leonardwein/Git/bbbAdminApp/run.py",
+		"/Users/leonardwein/Git/bbbAdminApp/config.py",
+		"/Users/leonardwein/Git/bbbAdminApp/app/templates/edit.html",
 		"/Users/leonardwein/Git/bbbAdmin/app/templates/new.html",
 		"/Users/leonardwein/Git/bbbAdmin/config.py",
 		"/Users/leonardwein/Git/bbbAdmin/db_downgrade.py",
@@ -139,7 +308,6 @@
 		"/Volumes/TNG/LogAnalysis/LogAnalysisSummary",
 		"/Users/leonardwein/Desktop/generateAPIcalls.py",
 		"/Users/leonardwein/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/leonardwein/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/leonardwein/Desktop/A03841A4.asc",
 		"/Volumes/TNG/Reveal/css/theme/default.css",
 		"/Users/leonardwein/Desktop/toEUR.py",
@@ -181,9 +349,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -191,6 +360,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"login",
+			"margin",
+			"updateJoin",
+			"print",
+			"joinUser",
+			"border",
+			"td",
+			"login_req",
+			"table",
+			"running",
+			"joinURLs",
+			"form",
+			"newMeeting",
+			"edit",
+			"session",
+			"getMeetingsCall",
+			"XML",
+			"moderatorpw",
 			"join",
 			"installationdata",
 			"important",
@@ -210,6 +397,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"th"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -225,19 +413,131 @@
 			[
 				{
 					"buffer": 0,
-					"file": "run.py",
+					"file": "app/templates/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 59,
+						"buffer_size": 2083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								845,
+								845
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 361.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/templates/meeting.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2402,
+								2402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/templates/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 96,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2339,
+								2339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 734.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								683,
+								683
 							]
 						],
 						"settings":
@@ -246,6 +546,89 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/templates/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1163,
+								1163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/static/css/style.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1045,
+								1045
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 632.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/static/css/default.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3120,
+								2904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2480.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -291,7 +674,7 @@
 	"project": "bbbAdminApp.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -325,7 +708,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 117.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

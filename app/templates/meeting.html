@@ -26,15 +26,21 @@ function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflo
 </script>
 
 
-<h1>Meeting: "{{ mInfo.meetingid.string }}"</h1>
+<h1><i>Meeting: </i><b>{{ mInfo.meetingid.string }}</b></h1>
 <div>
-<table class='nav'>
-	</tr>
-		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');">Join as Attendee</a></td>
-		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');">Join as Moderator</a></td>
-		<td><a href="{{ url_for('closeMeeting', meetingid=mInfo.meetingid.string, moderatorpw=mInfo.moderatorpw.string) }}">Shutdown Meeting</a></td>
-	</tr>
-</table>
+<nav id='meeting'>
+	<ul>
+		<li>
+			<a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Attendee</a>
+		</li>
+		<li>
+			<a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Moderator</a>
+		</li>
+		<li>
+			<a href="{{ url_for('closeMeeting', meetingid=mInfo.meetingid.string, moderatorpw=mInfo.moderatorpw.string) }}" class='button'>Shutdown Meeting</a>
+		</li>
+	</ul>
+</nav>
 <br>
 <table>	
 	<tr>
@@ -84,6 +90,10 @@ function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflo
 <br>
 <table id='joinAttendee'>
 	{% if joinUsers[mInfo.meetingid.string] %}
+	<tr>
+		<td>Username</td>
+		<td>Join URL</td>
+	<tr>
 	{% for key, value in joinUsers[mInfo.meetingid.string].iteritems() %}
 	<tr>
 		<td>
