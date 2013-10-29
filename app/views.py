@@ -81,16 +81,20 @@ def getParticipants(meetings):
 # @login_required
 def index():
 	meetings = getMeetingsCall().find_all('meeting')
+	# try:
 	participants = getParticipants(meetings)
 	updateJoinUsers(meetings)
 	return render_template("index.html", 
-		title = 'Admin',
 		meetings = meetings,
 		participants = participants)
+	# except:
+	# 	return render_template("index.html", 
+	# 		meetings = {},
+	# 		participants = 0)
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     render_template("index.html")
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    render_template("index.html")
 
 
 

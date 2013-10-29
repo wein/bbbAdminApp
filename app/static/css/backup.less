@@ -1,0 +1,164 @@
+// Style for the BBB Admin App
+
+body {
+	font-family: arial;
+ 	max-width:1600px;
+	min-width:520px;
+	margin:1.5em;
+}
+
+h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: 30px;
+	font-size: 1.5em;
+}
+
+h2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: 30px;
+	font-size: 1.5em;
+}
+
+
+// block to format header bar
+
+// #header {
+// 	width: 100%;  
+// 	white-space:nowrap;
+// 	display: block;
+// 	position: relative;
+// }
+
+#headerLogo {
+	max-width: 150px;
+	width: 20vw;
+}
+
+#headerLink {
+	margin-left: 10%;
+}
+
+#headerTitle {
+	color: black;
+	background-color:transparent;
+  	text-decoration:none;
+  	font-size: 3.5vw;
+}
+
+// --- format for input elements
+.input {
+	width: 200px;
+	background-color: #e8edff;
+	border: 1px solid grey;
+	height: 3em;
+	margin-right: 1em;
+}
+.input:hover {
+	border: 1px solid orange;
+}
+.input:focus {
+	border: 2px solid orange;
+	outline: none;
+}
+
+
+
+// --- block to format nav bar in meeting view
+
+#meeting {
+	font-size: 0.8em;
+}
+
+#meeting ul {
+	list-style-type: none;
+	// overflow: hidden;
+	margin-right: 0;
+	padding: 0;
+	margin-left: -5px;
+}
+
+#meeting li {
+	// border: 1px solid #005faa;
+	margin-right: 3vw;
+	padding: 5px;
+	display: inline;
+	// background-color: #E6E6FA;
+}
+
+// #meeting a {
+// 	width: 60px;
+// 	margin: 1vw;
+// 	padding: 5px 10px;
+// }
+
+// #meeting li:hover {
+// 	border: 1px solid #FF7700;
+// 	color: #FF7700;
+// }
+
+.button {
+    text-decoration: none;
+    color: #005faa;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid #005faa;
+   }
+
+.button:hover{
+	background-color: #E6E6FA;
+}
+
+// --- format of flashed messages
+.flashedMessage {
+	width: 50%;
+	list-style-type: none;
+}
+
+
+// --- block to format tables
+
+table {
+	border-width: 0px;
+	border-collapse:collapse;
+	font-size: 1em;
+	width: 100%;
+	text-align: left;
+	-moz-box-shadow: 2px 2px 2px #CCC;
+	-webkit-box-shadow: 2px 2px 2px #CCC;
+	box-shadow: 2px 2px 2px #CCC;
+}
+
+#joinAttendee {
+	table-layout:fixed;
+	word-wrap:break-word
+}
+
+table#Overview tr:not(:first-child):hover {
+	background-color: #E6E6FA;
+}
+
+tr, td, th
+{
+padding: 5px 10px;
+border: 1px solid #005faa;
+}
+
+
+// --- link styling
+
+a:link:not(#headerTitle) {
+  color: #005faa;
+  text-decoration:none;
+  // background-color: transparent;
+}
+a:visited:not(#headerTitle) {
+  color: #005faa;
+  text-decoration:none;
+}
+a:hover:not(#headerTitle), a:focus:not(#headerTitle) {
+  color: #FF7700;
+  text-decoration:none;
+}
+a:active:not(#headerTitle) {
+  color: #FF7700;
+  text-decoration:none;
+}
