@@ -1,0 +1,31 @@
+<!-- extend base layout -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Enter your credentials to enter <i>"{{ meetingid }}"</i></h1>
+
+<form action='' method='post' name='joinUser'>
+	{{form.hidden_tag()}}
+	<p>
+		Username: {{form.username(size=40)}}
+		{% for error in form.errors.username %}
+		<span style="color: red;">[{{error}}]</span>
+		{% endfor %}
+	</p>
+		{% if form.attendeePW %}
+		Password: {{form.attendeePW(size=40)}}
+		{% for error in form.errors.attendeePW %}
+		<span style="color: red;">[{{error}}]</span>
+		{% endfor %}
+		{% endif %}
+	<p>
+		<input type='submit' value='Submit'>
+	</p>
+</form>
+
+
+
+{% endblock %}
+
+

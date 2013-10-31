@@ -1,0 +1,23 @@
+<!-- extend base layout -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action='' method='post' name='joinUser'>
+	{{form.hidden_tag()}}
+	<p>
+		Username: {{form.username(size=40)}}
+		{% for error in form.errors.username %}
+		<span style="color: red;">[{{error}}]</span>
+		{% endfor %}
+	</p>
+	<p>
+		<input type='submit' value='Submit'>
+	</p>
+</form>
+
+
+{% endblock %}
+
+
+

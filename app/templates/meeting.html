@@ -29,20 +29,16 @@ function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflo
 <h1><i>Meeting: </i><b>{{ mInfo.meetingid.string }}</b></h1>
 <div>
 <nav id='meeting'>
-	<ul>
-		<li>
-			<a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Attendee</a>
-		</li>
-		<li>
-			<a href="javascript:set_joinLink('{{ url_for('join', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Moderator</a>
-		</li>
-		<li>
-			<a href="{{ url_for('closeMeeting', meetingid=mInfo.meetingid.string, moderatorpw=mInfo.moderatorpw.string) }}" class='button'>Shutdown Meeting</a>
-		</li>
-	</ul>
+	<a href="javascript:set_joinLink('{{ url_for('joinRedirect', meetingid=mInfo.meetingid.string, pw=mInfo.attendeepw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Attendee</a>
+	<a href="javascript:set_joinLink('{{ url_for('joinRedirect', meetingid=mInfo.meetingid.string, pw=mInfo.moderatorpw.string, createtime=mInfo.createtime.string) }}');" class='button'>Join as Moderator</a>
+	<a href="{{ url_for('closeMeeting', meetingid=mInfo.meetingid.string, moderatorpw=mInfo.moderatorpw.string) }}" class='button'>Shutdown Meeting</a>
 </nav>
 <br>
 <table>	
+	<tr>
+		<td>Join Link</td>
+		<td onclick="selectText(this)">{{ joinLink }}</td>
+	</tr>
 	<tr>
 		<td>running?</td>
 		<td>{{ mInfo.running.string }}</td>
@@ -60,7 +56,7 @@ function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflo
 	<tr>
 		<td>Create Time</td>
 		<td>
-			<script>document.write(moment("/Date({{mInfo.createtime.string}}"));</script>
+			<script>document.write(moment("/Date({{mInfo.createtime.string}}").format("hh:mm - DD.MM.YYYY"));</script>
 		</td>
 	</tr>
 	{% endif %}
@@ -68,12 +64,16 @@ function selectText(obj) {      // adapted from Denis Sadowski (via StackOverflo
 		<td>Admin PW</td>
 		<td>{{ mInfo.moderatorpw.string }}</td>
 	</tr>
+	<tr>
+		<td>Attendee PW</td>
+		<td>{{ mInfo.attendeepw.string }}</td>
+	</tr>
 </table>
 </div>
 </br></br>
 <div>
 
-
+<h3>Create Join Links for specific users</h3>
 <form action='' method='post' name='newparticipant'>
 	{{form.hidden_tag()}}
 	<p>

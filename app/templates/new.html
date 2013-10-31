@@ -7,16 +7,16 @@
 <form action='' method='post' name='newMeeting'>
 	{{form.hidden_tag()}}
 	<p>
-		Please enter Meeting Name (cannot contain spaces):<br>
+		Please enter Meeting Name:<br>
 		{{form.meetingName(size=80)}}
 		{% for error in form.errors.meetingName %}
 		<span style="color: red;">[{{error}}]</span>
 		{% endfor %}<br>
-		Please enter Admin PW (optional):<br>
+		<!-- Please enter Admin PW (optional):<br>
 		{{form.moderatorPW(size=80)}}
 		{% for error in form.errors.moderatorPW %}
 		<span style="color: red;">[{{error}}]</span>
-		{% endfor %}<br>
+		{% endfor %}<br> -->
 		Please enter attendee PW (optional):<br>
 		{{form.attendeePW(size=80)}}
 		{% for error in form.errors.attendeePW %}

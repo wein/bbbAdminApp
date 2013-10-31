@@ -11,10 +11,18 @@ class createMeetingForm(Form):
     moderatorPW = TextField('moderatorPW')
     attendeePW = TextField('attendeePW')
 
-    def validate_meetingName(form, field):
+    def validate_moderatorPW(form, field):
     	if ' ' in field.data:
-    		raise ValidationError('Please enter a name without whitespaces.')
+    		raise ValidationError('Please enter a password without whitespaces.')
+
+    def validate_attendeePW(form, field):
+    	if ' ' in field.data:
+    		raise ValidationError('Please enter a password without whitespaces.')
 
 class joinMeetingForm(Form):
-	username = TextField('username', validators = [Required()])
+    username = TextField('username', validators = [Required(message='This field is required.')])
+    attendeePW = TextField('attendeePW', validators = [Required(message='This field is required.')])
 
+    def validate_pw(form, field):
+        if ' ' in field.data:
+            raise ValidationError('Please enter a password without whitespaces.')

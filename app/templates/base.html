@@ -32,23 +32,27 @@
 			<nav>
 				<a href="{{ url_for('index') }}">Home</a>
 				<a href="{{ url_for('new') }}">New Meeting</a>
-				<a href="{{ url_for('index') }}">Configure</a>
+				<!-- <a href="{{ url_for('index') }}">Configure</a> -->
 			</nav>
 			<nav id='login'>
 				<a href="{{ url_for('login') }}">Login</a>
 			</nav>
 		</header>
 		<section>
-			<div id='content'>
-				{% with messages = get_flashed_messages() %}
-				{% if messages %}
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<div id='flashMessages'>
+				
 				<ul class='flashedMessage'>
 				{% for message in messages %}
 				<li>{{message}}</li>
 				{% endfor %}
 				</ul>
-				{% endif %}
-				{% endwith %}
+				
+			</div> 
+			{% endif %}
+			{% endwith %}
+			<div id='content'>
 				{% block content %}{% endblock %}
 			</div>
 		</section>

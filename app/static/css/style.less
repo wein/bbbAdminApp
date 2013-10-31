@@ -15,6 +15,7 @@ header {
 	height: 40px;
 	width: 100%;
 	background-color: #30406b;
+	margin-bottom: 20px;
 }
 
 // TNG Logo Style
@@ -33,7 +34,7 @@ header nav {
 }
 
 
-header a {
+header a, header a:visited {
 	color: white;
 	font-family: arial;
 	text-decoration: none;
@@ -61,8 +62,6 @@ header a:active {
 
 section {
 	position: relative;
-	margin-top: 40px;
-	// margin-bottom: 20px;
 	width: 100%;
 	overflow: auto;
 	padding-bottom: 20px;
@@ -72,11 +71,23 @@ section {
 	min-height: 100%;
 }
 
+#flashMessages {
+	background-color: #eeeeee;
+	// padding: 20px;
+	width: 80%;
+	min-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+
 #content {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 80%;
 	min-width: 500px;
+	max-width: 80%;
+	padding-bottom: 40px;
 }
 
 footer {
@@ -101,6 +112,8 @@ h1 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-size: 24px;
 }
+
+
 
 // // --- format for input elements
 // .input {
@@ -173,49 +186,133 @@ h1 {
 
 // --- block to format tables
 
+// table { 
+// // color: #333;
+// font-family: Helvetica, Arial, sans-serif;
+// border-collapse: collapse; 
+// // border-spacing: 0; 
+// border: none;
+
+// font-size: 1em;
+// width: 100%;
+// // -moz-box-shadow: 2px 2px 2px #CCC;
+// // -webkit-box-shadow: 2px 2px 2px #CCC;
+// // box-shadow: 2px 2px 2px #CCC;
+// border-radius: 4px;
+// }
+
+// td, th { 
+// border: 1px solid transparent; /* No more visible border */
+// border-bottom: 1px solid #30406b;
+// background: #E6E6FA;
+// height: 30px; 
+// text-align: center;
+// transition: all 0.3s;  /* Simple transition for hover effect */
+// }
+
+// th {
+// font-weight: bold;
+// }
+
 table {
-	border-width: 0px;
+	// margin-bottom: 20px;
 	border-collapse:collapse;
+	// font-family: 'Lato', Calibri, Arial, sans-serif;
+	border: none;
+	background: #E6E6FA;
+    border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+}
+th, td {
+	box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+	inset 0 1px rgba(0,0,0,0.25);
+}
+
+th {
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	padding: 1em;
+	color: black;
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-size: 1.1em;
+	}
+td {
+	// color: #f7f7f7;
+	color: #30406b;
+	// color: rgba(0,0,0,0.45);
+	padding: 0.7em 1em 0.7em 1.15em;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
 	font-size: 1em;
-	width: 100%;
-	text-align: left;
-	-moz-box-shadow: 2px 2px 2px #CCC;
-	-webkit-box-shadow: 2px 2px 2px #CCC;
-	box-shadow: 2px 2px 2px #CCC;
 }
 
-#joinAttendee {
-	table-layout:fixed;
-	word-wrap:break-word
+tr {
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	-moz-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s;
 }
 
-table#Overview tr:not(:first-child):hover {
-	background-color: #E6E6FA;
+tr:hover {
+	background: rgba(0,0,0,0.19);
 }
 
-tr, td, th
-{
-padding: 5px 10px;
-border: 1px solid #005faa;
-}
+
+// .noBorder {
+// 	border: none;
+// }
+
+
+// table {
+// 	border-width: 0px;
+// 	border-collapse:collapse;
+// 	font-size: 1em;
+// 	width: 100%;
+// 	text-align: left;
+// 	-moz-box-shadow: 2px 2px 2px #CCC;
+// 	-webkit-box-shadow: 2px 2px 2px #CCC;
+// 	box-shadow: 2px 2px 2px #CCC;
+// }
+
+// table#Overview tr:not(:first-child):hover {
+// 	background-color: #E6E6FA;
+// }
+
+// td, th
+// {
+// padding: 5px 10px;
+// border: 1px solid #005faa;
+// }
+
+// #joinAttendee {
+// 	table-layout:fixed;
+// 	word-wrap:break-word
+// }
 
 
 // // --- link styling
 
-// a:link:not(#headerTitle) {
-//   color: #005faa;
-//   text-decoration:none;
-//   // background-color: transparent;
-// }
-// a:visited:not(#headerTitle) {
-//   color: #005faa;
-//   text-decoration:none;
-// }
-// a:hover:not(#headerTitle), a:focus:not(#headerTitle) {
-//   color: #FF7700;
-//   text-decoration:none;
-// }
-// a:active:not(#headerTitle) {
-//   color: #FF7700;
-//   text-decoration:none;
-// }
+#meeting a {
+	margin-right: 2em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+a {
+  // color: black;
+  color: #30406b;
+  text-decoration:none;
+  // background-color: transparent;
+}
+a:visited {
+  // color: #005faa;
+  color: #30406b;
+  text-decoration:none;
+}
+a:hover, table a:focus {
+  color: #FF7700;
+  text-decoration:none;
+}
+a:active {
+  color: #FF7700;
+  text-decoration:none;
+}

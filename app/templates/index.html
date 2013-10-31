@@ -13,7 +13,6 @@ function set_joinLink(joinURL)
 
 // Function to make the entire row clickable.
 $(document).ready(function() {
-
     $('tr').click(function() {
         var href = $(this).find("a").attr("href");
         if(href) {
@@ -25,43 +24,39 @@ $(document).ready(function() {
 
 </script>
 <table id='Overview'>	
-	<tr class='clickableRow' href='http://www.google.com'>
+	<tr>
 		<th>Meeting Name</th>
 		<th>Participants</th>
 		<th>Time Created</th>
 		<!-- <th>Teilnehmer PW</th>
 		<th>Admin PW</th> -->
 		<!-- <th>running?</th> -->
-		<th></th>
-		<th></th>
-		<th></th>
+		<th width="100px"></th>
+		<th width="100px"></th>
+		<th width="100px"></th>
 	</tr>
-	{% if meetings != [] %}
-	{% for m in meetings %}
+	{% if defaultMeetingRunning == False %}
 	<tr>
-		<td><a href="{{ url_for('meeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">{{ m.meetingid.string }}</a></td>
-		<td>{{ participants[m.meetingid.string] }}</td>
-		<td>
-			<script>document.write(moment("/Date({{m.createtime.string}}"));</script>
-		</td>
-		<!-- <td>{{m.attendeepw.string}}</td>
-		<td>{{m.moderatorpw.string}}</td> -->
-		<!-- <td>{{m.running.string}}</td> -->
-		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.attendeepw.string, createtime=m.createtime.string) }}');">Join as Attendee</a></td>
-		<td><a href="javascript:set_joinLink('{{ url_for('join', meetingid=m.meetingid.string, pw=m.moderatorpw.string, createtime=m.createtime.string) }}');">Join as Moderator</a></td>
-		<td><a href="{{ url_for('closeMeeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">Shutdown Meeting</a></td>
-	</tr>
-	{% endfor %}
-	{% else %}
-	<tr>
-		<td>&nbsp;</td>
+		<td><a href="{{ url_for('meeting', meetingid=defaultMeeting['meetingID']) }}">{{ defaultMeeting.get('meetingName') }}</a></td>
+		<td>0</td>
+		<td>-</td>
 		<td></td>
 		<td></td>
-		<td width="100px"></td>
-		<td width="100px"></td>
-		<td width="100px"></td>
+		<td><a href="{{ url_for('createDefaultMeeting') }}">Launch Meeting</a></td>
 	</tr>
 	{% endif %}
+	{% for m in meetings %}
+	<tr>
+		<td><a href="{{ url_for('meeting', meetingid=m.meetingid.string) }}">{{ m.meetingname.string }}</a></td>
+		<td>{{ participants[m.meetingid.string] }}</td>
+		<td>
+			<script>document.write(moment("/Date({{m.createtime.string}}").format("hh:mm - DD.MM.YYYY"));</script>
+		</td>
+		<td><a href="javascript:set_joinLink('{{ url_for('joinRedirect', meetingid=m.meetingid.string, pw=m.attendeepw.string, createtime=m.createtime.string) }}');">Join</a></td>
+		<td><a href="javascript:set_joinLink('{{ url_for('joinRedirect', meetingid=m.meetingid.string, pw=m.moderatorpw.string, createtime=m.createtime.string) }}');">Join as Moderator</a></td>
+		<td><a href="{{ url_for('closeMeeting', meetingid=m.meetingid.string, moderatorpw=m.moderatorpw.string) }}">Close</a></td>
+	</tr>
+	{% endfor %}
 </table>
 
 
